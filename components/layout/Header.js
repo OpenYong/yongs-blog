@@ -15,10 +15,14 @@ const Header = () => {
         <nav>
           <ul className={classes.list}>
             <li className={classes["list__item"]}>
-              <Link href="/about">소개</Link>
+              <Link href="/about">
+                <a>소개</a>
+              </Link>
             </li>
             <li>
-              <Link href="/contact">연락하기</Link>
+              <Link href="/contact">
+                <a>연락하기</a>
+              </Link>
             </li>
           </ul>
         </nav>

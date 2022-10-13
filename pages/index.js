@@ -1,4 +1,5 @@
 import Head from "next/head";
+import AllPosts from "../components/posts/AllPosts";
 
 const HomaPage = () => {
   return (
@@ -10,6 +11,7 @@ const HomaPage = () => {
           content="안녕하세요. 프론트엔드 관련 블로그입니다!"
         />
       </Head>
+      <AllPosts />
     </>
   );
 };
