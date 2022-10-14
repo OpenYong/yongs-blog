@@ -1,4 +1,5 @@
 import classes from "./PostContent.module.css";
+import ReactMarkdown from "react-markdown";
 
 const DUMMY_POST = {
   title: "Post 1",
@@ -12,7 +13,7 @@ const PostContent = (props) => {
   return (
     <>
       <article className={classes.content}>
-        {DUMMY_POST.content}
+        <ReactMarkdown>{DUMMY_POST.content}</ReactMarkdown>
       </article>
     </>
   );
