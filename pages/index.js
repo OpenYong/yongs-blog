@@ -1,7 +1,7 @@
 import Head from "next/head";
 import AllPosts from "../components/posts/AllPosts";
 
-import { getAllPosts } from "../lib/post-util";
+import { getAllPosts } from "../utils/post";
 
 const HomaPage = (props) => {
   return (
