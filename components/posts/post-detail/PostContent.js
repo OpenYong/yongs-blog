@@ -1,5 +1,4 @@
 import classes from "./PostContent.module.css";
-import ReactMarkdown from "react-markdown";
 import { MDXRemote } from "next-mdx-remote";
 
 import SyntaxHighlighter from "react-syntax-highlighter";
