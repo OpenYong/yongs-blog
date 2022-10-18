@@ -4,7 +4,7 @@ const AllPosts = (props) => {
   const { posts } = props;
 
   return (
-    <section>
+    <section className="px-4">
       <h1 className="text-2xl font-bold">전체 게시글</h1>
       <ul>
         {posts
