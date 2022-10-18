@@ -1,5 +1,4 @@
 import Link from "next/link";
-import classes from "./PostItem.module.css";
 
 const PostItem = (props) => {
   const { title, image, excerpt, date, slug } = props.post;
@@ -13,10 +12,10 @@ const PostItem = (props) => {
   const slugPath = `/posts/${slug}`;
 
   return (
-    <li className={classes.container}>
+    <li className="bg-white rounded-md px-4 mb-3">
       <Link href={slugPath}>
         <a>
-          <h1>{title}</h1>
+          <h1 className="text-xl font-bold py-3">{title}</h1>
           <p>{excerpt}</p>
           <time>{formattedDate}</time>
         </a>
