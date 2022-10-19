@@ -1,25 +1,78 @@
 import Link from "next/link";
-import Logo from "./Logo";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+
+  const customButton = () => {
+    return (
+      <a
+        className={`text-base ${
+          router.pathname === "/about"
+            ? "font-medium text-sky-500"
+            : "font-normal"
+        }`}
+      >
+        소개
+      </a>
+    );
+  };
+
   return (
     <>
-      <header className="flex justify-between items-center h-16 w-full px-4 border-b">
-        <Link href="/">
-          <a>
-            <Logo />
-          </a>
-        </Link>
+      <header className="flex justify-around items-center h-16 w-full px-4 border-b">
         <nav>
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-2">
             <li>
               <Link href="/about">
-                <a className="text-base font-medium">소개</a>
+                <a
+                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                    router.pathname === "/"
+                      ? "font-medium text-sky-500"
+                      : "font-normal"
+                  } hover:bg-slate-100 duration-300`}
+                >
+                  홈
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a
+                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                    router.pathname === "/blog"
+                      ? "font-medium text-sky-500"
+                      : "font-normal"
+                  } hover:bg-slate-100 duration-300`}
+                >
+                  블로그
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/about">
+                <a
+                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                    router.pathname === "/about"
+                      ? "font-medium text-sky-500"
+                      : "font-normal"
+                  } hover:bg-slate-100 duration-300`}
+                >
+                  소개
+                </a>
               </Link>
             </li>
             <li>
               <Link href="/contact">
-                <a className="text-base font-medium">연락하기</a>
+                <a
+                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                    router.pathname === "/contact"
+                      ? "font-medium text-sky-500"
+                      : "font-normal"
+                  } hover:bg-slate-100 duration-300`}
+                >
+                  연락하기
+                </a>
               </Link>
             </li>
           </ul>
