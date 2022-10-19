@@ -13,7 +13,7 @@ export function getPostData(fileName) {
 
   const postData = {
     slug: postSlug,
-    ...data,
+    frontMatter: data,
     content: content,
     // slug: fileName.split(".")[0],
   };
@@ -33,7 +33,7 @@ export function getAllPosts() {
   });
 
   const sortedPosts = allPosts.sort((postA, postB) =>
-    postA.date > postB.date ? -1 : 1
+    postA.frontMatter.date > postB.frontMatter.date ? -1 : 1
   );
 
   return sortedPosts;

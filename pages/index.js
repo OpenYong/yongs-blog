@@ -3,7 +3,7 @@ import AllPosts from "../components/posts/AllPosts";
 
 import { getAllPosts } from "../utils/post";
 
-const HomaPage = (props) => {
+const HomaPage = ({ posts }) => {
   return (
     <>
       <Head>
@@ -13,7 +13,7 @@ const HomaPage = (props) => {
           content="안녕하세요. 프론트엔드 관련 블로그입니다!"
         />
       </Head>
-      <AllPosts posts={props.posts} />
+      <AllPosts posts={posts} />
     </>
   );
 };

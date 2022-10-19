@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-const PostItem = (props) => {
-  const { title, image, excerpt, date, slug, tags } = props.post;
+const PostItem = ({ post }) => {
+  const { frontMatter, slug } = post;
+  const { title, image, excerpt, date, tags } = frontMatter;
 
   const formattedDate = new Date(date).toLocaleDateString("ko-KR", {
     day: "numeric",
@@ -10,8 +11,6 @@ const PostItem = (props) => {
   });
 
   const slugPath = `/posts/${slug}`;
-
-  console.log(tags);
 
   return (
     <li className="bg-white shadow-md shadow-slate-100 rounded-md p-4 mb-3">

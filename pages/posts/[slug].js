@@ -1,19 +1,28 @@
+import Head from "next/head";
 import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostFiles, getPostData } from "../../utils/post";
 import { serialize } from "next-mdx-remote/serialize";
 
-const PostDetailPage = (props) => {
-  return <PostContent post={props.post} source={props.mdxSource} />;
+const PostDetailPage = ({ frontMatter, mdxSource }) => {
+  return (
+    <>
+      <Head>
+        <title>{frontMatter.title}</title>
+        <meta name="description" content={frontMatter.excerpt} />
+      </Head>
+      <PostContent post={frontMatter} source={mdxSource} />
+    </>
+  );
 };
 
 export async function getStaticProps(context) {
   const { params } = context;
   const { slug } = params;
-  const post = getPostData(slug);
-  const mdxSource = await serialize(post.content);
+  const { frontMatter, content } = getPostData(slug);
+  const mdxSource = await serialize(content);
 
   return {
-    props: { post, mdxSource },
+    props: { frontMatter, mdxSource },
     revalidate: 600,
   };
 }
@@ -23,8 +32,10 @@ export async function getStaticPaths() {
 
   const slugs = postFileNames.map((file) => file.replace(/\.mdx$/, ""));
 
+  const paths = slugs.map((slug) => ({ params: { slug } }));
+
   return {
-    paths: slugs.map((slug) => ({ params: { slug: slug } })),
+    paths,
     fallback: false,
     // fallback: 'blocking' // 고민해보자
   };
