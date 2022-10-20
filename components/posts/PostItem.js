@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const PostItem = ({ post }) => {
-  const { frontMatter, slug } = post;
-  const { title, image, excerpt, date, tags } = frontMatter;
+  const { metadata, slug } = post;
+  const { title, image, excerpt, date, tags } = metadata;
 
   const formattedDate = new Date(date).toLocaleDateString("ko-KR", {
     day: "numeric",

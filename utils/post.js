@@ -13,7 +13,7 @@ export function getPostData(fileName) {
 
   const postData = {
     slug: postSlug,
-    frontMatter: data,
+    metadata: data,
     content: content,
     // slug: fileName.split(".")[0],
   };
@@ -33,7 +33,8 @@ export function getAllPosts() {
   });
 
   const sortedPosts = allPosts.sort((postA, postB) =>
-    postA.frontMatter.date > postB.frontMatter.date ? -1 : 1
+    // 내림차순 desc
+    postA.metadata.date > postB.metadata.date ? -1 : 1
   );
 
   return sortedPosts;
