@@ -1,9 +1,5 @@
 import { MDXRemote } from "next-mdx-remote";
 
-import SyntaxHighlighter from "react-syntax-highlighter";
-
-const components = { SyntaxHighlighter };
-
 const PostContent = (props) => {
   const { post, source } = props;
 
@@ -12,7 +8,7 @@ const PostContent = (props) => {
       <h1 className="text-4xl font-bold mt-12 mb-6">{post.title}</h1>
       <time className="text-gray-500 italic">{post.date}</time>
       <div className="">
-        <MDXRemote {...source} components={components} />
+        <MDXRemote {...source} />
       </div>
     </article>
   );

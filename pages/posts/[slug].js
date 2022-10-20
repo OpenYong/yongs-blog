@@ -3,6 +3,9 @@ import PostContent from "../../components/posts/post-detail/PostContent";
 import { getPostFiles, getPostData } from "../../utils/post";
 import { serialize } from "next-mdx-remote/serialize";
 
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+
 const PostDetailPage = ({ metadata, mdxSource }) => {
   return (
     <>
@@ -32,7 +35,14 @@ export async function getStaticProps(context) {
   const { params } = context;
   const { slug } = params;
   const { metadata, content } = getPostData(slug);
-  const mdxSource = await serialize(content);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [
+        rehypeSlug,
+        // [rehypeAutolinkHeadings, { behavior: "wrap" }],
+      ],
+    },
+  });
 
   return {
     props: { metadata, mdxSource },
