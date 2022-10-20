@@ -24,7 +24,7 @@ const Header = () => {
         <nav>
           <ul className="flex space-x-2">
             <li>
-              <Link href="/about">
+              <Link href="/">
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
                     router.pathname === "/"
@@ -37,10 +37,10 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <Link href="/about">
+              <Link href="/posts">
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
-                    router.pathname === "/blog"
+                    router.pathname === "/posts"
                       ? "font-medium text-sky-500"
                       : "font-normal"
                   } hover:bg-slate-100 duration-300`}
