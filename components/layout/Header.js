@@ -28,7 +28,7 @@ const Header = () => {
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
                     router.pathname === "/"
-                      ? "font-medium text-sky-500"
+                      ? "font-bold text-sky-500"
                       : "font-normal"
                   } hover:bg-slate-100 duration-300`}
                 >
@@ -41,7 +41,7 @@ const Header = () => {
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
                     router.pathname === "/posts"
-                      ? "font-medium text-sky-500"
+                      ? "font-bold text-sky-500"
                       : "font-normal"
                   } hover:bg-slate-100 duration-300`}
                 >
@@ -54,7 +54,7 @@ const Header = () => {
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
                     router.pathname === "/about"
-                      ? "font-medium text-sky-500"
+                      ? "font-bold text-sky-500"
                       : "font-normal"
                   } hover:bg-slate-100 duration-300`}
                 >
@@ -67,7 +67,7 @@ const Header = () => {
                 <a
                   className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
                     router.pathname === "/contact"
-                      ? "font-medium text-sky-500"
+                      ? "font-bold text-sky-500"
                       : "font-normal"
                   } hover:bg-slate-100 duration-300`}
                 >

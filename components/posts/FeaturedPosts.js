@@ -1,11 +1,10 @@
 import PostItem from "./PostItem";
 
-const AllPosts = (props) => {
-  const { posts } = props;
-
+const FeaturedPosts = ({posts}) => {
+    console.log(posts)
   return (
     <section className="px-4">
-      <h1 className="text-2xl font-bold my-4">전체글</h1>
+      <h1 className="text-2xl font-bold my-4">최신글</h1>
       <ul>
         {posts
           .slice()
@@ -15,7 +14,8 @@ const AllPosts = (props) => {
           ))}
       </ul>
     </section>
-  );
-};
+  )
+}
 
-export default AllPosts;
+
+export default FeaturedPosts

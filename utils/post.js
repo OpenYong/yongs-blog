@@ -33,8 +33,8 @@ export function getAllPosts() {
   });
 
   const sortedPosts = allPosts.sort((postA, postB) =>
-    // 내림차순 desc
-    postA.metadata.date > postB.metadata.date ? -1 : 1
+    // 오름차순 ASC
+    postA.metadata.date > postB.metadata.date ? 1 : -1
   );
 
   return sortedPosts;

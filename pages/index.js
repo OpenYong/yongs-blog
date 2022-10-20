@@ -1,5 +1,7 @@
 import Head from "next/head";
+import FeaturedPosts from "../components/posts/FeaturedPosts";
 
+import { getAllPosts } from "../utils/post";
 
 const HomaPage = ({ posts }) => {
   return (
@@ -11,10 +13,19 @@ const HomaPage = ({ posts }) => {
           content="안녕하세요. 프론트엔드 관련 블로그입니다!"
         />
       </Head>
-
+      <FeaturedPosts posts={posts} />
     </>
   );
 };
 
+export async function getStaticProps(context) {
+  const posts = getAllPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
+}
 
 export default HomaPage;

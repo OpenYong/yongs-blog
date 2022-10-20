@@ -13,7 +13,7 @@ const PostItem = ({ post }) => {
   const slugPath = `/posts/${slug}`;
 
   return (
-    <li className="bg-white shadow-md shadow-slate-100 rounded-md p-4 mb-3">
+    <li className="bg-white p-4 mb-3">
       <Link href={slugPath}>
         <a>
           <h1 className="text-xl font-bold">{title}</h1>
