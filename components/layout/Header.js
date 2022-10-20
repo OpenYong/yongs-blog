@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="flex justify-around items-center h-16 w-full px-4 border-b">
+      <header className="bg-white sticky top-0 flex justify-around items-center h-16 w-full px-4 border-b">
         <nav>
           <ul className="flex space-x-2">
             <li>
