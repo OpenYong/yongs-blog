@@ -5,7 +5,6 @@ const AllPosts = (props) => {
 
   return (
     <section className="px-4">
-      <h1 className="text-2xl font-bold my-4">전체글</h1>
       <ul>
         {posts
           .slice()

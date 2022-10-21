@@ -2,7 +2,6 @@ import PostItem from "./PostItem";
 import Link from "next/link";
 
 const FeaturedPosts = ({ posts }) => {
-  console.log(posts);
   return (
     <section className="px-4 border rounded-lg border-gray-100 m-4">
       <Link href="/posts">
