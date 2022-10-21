@@ -34,8 +34,8 @@ export function getAllPosts() {
 
   const sortedPosts = allPosts.sort((postA, postB) =>
     // 오름차순 ASC
-    postA.metadata.date > postB.metadata.date ? 1 : -1
+    new Date(postA.metadata.date) > new Date(postB.metadata.date) ? 1 : -1
   );
-
+  
   return sortedPosts;
 }
