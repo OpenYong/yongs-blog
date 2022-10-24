@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
@@ -8,6 +9,7 @@ const Layout = ({ children }) => {
       <Header />
       {/* <NavBar /> */}
       <main className="bg-white min-h-screen mx-auto">{children}</main>
+      <Footer />
     </>
   );
 };
