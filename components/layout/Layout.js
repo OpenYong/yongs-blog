@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <>
       <Header />
       {/* <NavBar /> */}
-      <main className="bg-white min-h-screen mx-auto">{children}</main>
+      <main className="mx-auto min-h-screen bg-white">{children}</main>
       <Footer />
     </>
   );

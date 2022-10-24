@@ -20,17 +20,17 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white sticky top-0 flex justify-around items-center h-16 w-full px-4 border-b">
+      <header className="sticky top-0 flex h-16 w-full items-center justify-around border-b bg-white px-4">
         <nav>
           <ul className="flex space-x-2">
             <li>
               <Link href="/">
                 <a
-                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                  className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/"
                       ? "font-bold text-sky-500"
                       : "font-normal"
-                  } hover:bg-slate-100 duration-300`}
+                  } duration-300 hover:bg-slate-100`}
                 >
                   홈
                 </a>
@@ -39,11 +39,11 @@ const Header = () => {
             <li>
               <Link href="/posts">
                 <a
-                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                  className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/posts"
                       ? "font-bold text-sky-500"
                       : "font-normal"
-                  } hover:bg-slate-100 duration-300`}
+                  } duration-300 hover:bg-slate-100`}
                 >
                   블로그
                 </a>
@@ -52,11 +52,11 @@ const Header = () => {
             <li>
               <Link href="/about">
                 <a
-                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                  className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/about"
                       ? "font-bold text-sky-500"
                       : "font-normal"
-                  } hover:bg-slate-100 duration-300`}
+                  } duration-300 hover:bg-slate-100`}
                 >
                   소개
                 </a>
@@ -65,11 +65,11 @@ const Header = () => {
             <li>
               <Link href="/contact">
                 <a
-                  className={`p-2 transition rounded-md duration-0 ease-in-out text-base ${
+                  className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/contact"
                       ? "font-bold text-sky-500"
                       : "font-normal"
-                  } hover:bg-slate-100 duration-300`}
+                  } duration-300 hover:bg-slate-100`}
                 >
                   연락하기
                 </a>

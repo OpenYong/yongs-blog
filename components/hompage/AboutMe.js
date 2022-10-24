@@ -1,7 +1,7 @@
 const AboutMe = () => {
   return (
     <div className="px-4">
-      <h1 className="text-2xl font-bold my-4">소개</h1>
+      <h1 className="my-4 text-2xl font-bold">소개</h1>
       <p className="text-lg text-gray-500">
         웹개발에 자부심이 있는 개발자 <b>Yong Lee</b> 입니다.
         <br />

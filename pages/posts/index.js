@@ -16,7 +16,7 @@ const postsPage = ({ posts }) => {
       </Head>
 
       <PageHeader>블로그</PageHeader>
-      <p className="text-center my-8">웹개발 기술에 관한 글을 작성합니다.</p>
+      <p className="my-8 text-center">웹개발 기술에 관한 글을 작성합니다.</p>
       <AllPosts posts={posts} />
     </>
   );

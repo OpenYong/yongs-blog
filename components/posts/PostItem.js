@@ -20,10 +20,10 @@ const PostItem = ({ post }) => {
           <p className="pt-4 pb-4 text-gray-500">{excerpt}</p>
         </a>
       </Link>
-      <div className="flex space-x-3 mb-4">
+      <div className="mb-4 flex space-x-3">
         {tags.map((tag) => {
           return (
-            <div key={tag} className="bg-slate-100 py-1 px-2 rounded">
+            <div key={tag} className="rounded bg-slate-100 py-1 px-2">
               <p className="text-sm text-sky-500">#{tag}</p>
             </div>
           );
