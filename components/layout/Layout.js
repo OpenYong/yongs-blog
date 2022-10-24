@@ -8,7 +8,12 @@ const Layout = ({ children }) => {
     <>
       <Header />
       {/* <NavBar /> */}
-      <main className="mx-auto min-h-screen bg-white">{children}</main>
+      <main
+        style={{ minHeight: "calc(100vh - 64px - 188px)" }}
+        className="mx-auto bg-white"
+      >
+        {children}
+      </main>
       <Footer />
     </>
   );

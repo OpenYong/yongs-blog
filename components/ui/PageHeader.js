@@ -1,6 +1,6 @@
 const PageHeader = (props) => {
   return (
-    <h1 className="text-2xl font-bold mt-16 mb-8 text-center">
+    <h1 className="text-2xl font-bold pt-16 pb-8 text-center">
       {props.children}
     </h1>
   );
