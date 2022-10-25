@@ -5,8 +5,21 @@ import { serialize } from "next-mdx-remote/serialize";
 
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import { useEffect } from "react";
 
-const PostDetailPage = ({ metadata, mdxSource }) => {
+const PostDetailPage = ({ metadata, mdxSource, slug }) => {
+  console.log(slug);
+
+  // useEffect(() => {
+  //   fetch('api/posts',{
+  //     method:'PUT',
+  //     body: 
+  //   })
+  
+
+  // }, [])
+  
+
   return (
     <>
       <Head>
@@ -45,7 +58,7 @@ export async function getStaticProps(context) {
   });
 
   return {
-    props: { metadata, mdxSource },
+    props: { metadata, mdxSource, slug },
     revalidate: 600,
   };
 }
