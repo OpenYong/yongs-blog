@@ -8,13 +8,14 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { useEffect } from "react";
 
 const PostDetailPage = ({ metadata, mdxSource, slug }) => {
-  // useEffect(() => {
-  //   fetch('api/posts',{
-  //     method:'PUT',
-  //     body:
-  //   })
-
-  // }, [])
+  useEffect(() => {
+    const incrementViews = () => {
+      fetch(`/api/posts/${slug}`, {
+        method: "PUT",
+      });
+    };
+    incrementViews();
+  }, []);
 
   return (
     <>

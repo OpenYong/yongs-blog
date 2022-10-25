@@ -14,8 +14,7 @@ async function handler(req, res) {
       mongoClient = await connectToCluster(dbConnectionUri);
       const db = mongoClient.db(dbName);
       const collection = db.collection("posts");
-      const result = await collection
-        .findOne({slug : postSlug})
+      const result = await collection.findOne({ slug: postSlug });
 
       res.status(200).json({ postInfo: result });
     } finally {
@@ -24,12 +23,12 @@ async function handler(req, res) {
   }
 
   if (req.method === "PUT") {
-    const { visit, slug } = req.body;
+    // const { visit, slug } = req.body;
 
-    const postInfo = {
-      totalViews,
-      likes,
-    };
+    // const postInfo = {
+    //   totalViews,
+    //   likes,
+    // };
 
     let mongoClient;
 
@@ -37,7 +36,15 @@ async function handler(req, res) {
       mongoClient = await connectToCluster(dbConnectionUri);
       const db = mongoClient.db(dbName);
       const collection = db.collection("posts");
-      const result = collection.findOne({ slug });
+      const result = await collection.findOneAndUpdate(
+        { slug: postSlug },
+        {
+          $inc: {
+            totalViews: 1,
+          },
+        },
+        { returnOriginal: false }
+      );
 
       res.status(200).json({ postInfo: result });
     } finally {
