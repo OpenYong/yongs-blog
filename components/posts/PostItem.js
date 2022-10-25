@@ -1,8 +1,23 @@
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const PostItem = ({ post }) => {
   const { metadata, slug } = post;
   const { title, image, excerpt, date, tags } = metadata;
+
+  const [views, setViews] = useState(0);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const responseData = await fetch(`/api/posts/${slug}`)
+        .then((res) => res.json())
+        .then((data) => data.postInfo);
+      const { totalViews } = responseData;
+      setViews(totalViews);
+    };
+
+    fetchData();
+  }, []);
 
   const formattedDate = new Date(date).toLocaleDateString("ko-KR", {
     day: "numeric",
@@ -29,7 +44,12 @@ const PostItem = ({ post }) => {
           );
         })}
       </div>
-      <time className="text-sm text-gray-500">{formattedDate}</time>
+      <div className="flex">
+        <time className="text-sm text-gray-500">{formattedDate}</time>
+        <div>
+          <span>{views}</span>조회
+        </div>
+      </div>
     </li>
   );
 };

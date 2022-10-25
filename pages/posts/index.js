@@ -6,12 +6,6 @@ import PageHeader from "../../components/ui/PageHeader";
 import { getAllPosts } from "../../utils/post";
 
 const postsPage = ({ posts }) => {
-  useEffect(() => {
-    const result = fetch(`/api/posts`)
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }, []);
-
   return (
     <>
       <Head>
