@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
+import { FiEye } from "react-icons/fi";
+
 const PostItem = ({ post }) => {
   const { metadata, slug } = post;
   const { title, image, excerpt, date, tags } = metadata;
@@ -44,10 +46,11 @@ const PostItem = ({ post }) => {
           );
         })}
       </div>
-      <div className="flex">
+      <div className="flex space-x-4">
         <time className="text-sm text-gray-500">{formattedDate}</time>
-        <div>
-          <span>{views}</span>조회
+        <div className="flex items-center space-x-1 text-gray-500">
+          <FiEye />
+          <span>{views}</span>
         </div>
       </div>
     </li>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { IoLogoGithub } from "react-icons/io5";
+import { FiGithub } from "react-icons/fi";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
               className="flex items-center justify-center space-x-2 text-lg text-gray-500 transition duration-300 hover:text-black"
               target="_blank"
             >
-              <IoLogoGithub size="1.5em" title="GitHub" />
+              <FiGithub size="1.5em" title="GitHub" />
               <span>GitHub</span>
             </a>
           </Link>
