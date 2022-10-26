@@ -4,7 +4,7 @@ const AllPosts = (props) => {
   const { posts } = props;
 
   return (
-    <section className="px-4">
+    <section className="px-4 my-4">
       <ul className="space-y-12">
         {posts
           .slice()

@@ -5,7 +5,7 @@ import PageHeader from "../../components/ui/PageHeader";
 
 import { getAllPosts } from "../../utils/post";
 
-const postsPage = ({ posts }) => {
+const PostsPage = ({ posts }) => {
   return (
     <>
       <Head>
@@ -17,7 +17,7 @@ const postsPage = ({ posts }) => {
       </Head>
 
       <PageHeader>블로그</PageHeader>
-      <p className="my-8 text-center">웹개발 기술에 관한 글을 작성합니다.</p>
+      <p className="my-8 text-center">웹개발에 관한 글을 작성합니다.</p>
       <AllPosts posts={posts} />
     </>
   );

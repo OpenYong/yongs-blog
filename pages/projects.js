@@ -1,6 +1,6 @@
 import PageHeader from "../components/ui/PageHeader";
 
-const Contact = () => {
+const ProjectPage = () => {
   return (
     <div>
       <PageHeader>업데이트 예정🔧</PageHeader>
@@ -8,4 +8,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ProjectPage;

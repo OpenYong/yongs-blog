@@ -50,6 +50,19 @@ const Header = () => {
               </Link>
             </li>
             <li>
+              <Link href="/projects">
+                <a
+                  className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
+                    router.pathname === "/projects"
+                      ? "font-bold text-sky-500"
+                      : "font-normal"
+                  } duration-300 hover:bg-slate-100`}
+                >
+                  프로젝트
+                </a>
+              </Link>
+            </li>
+            <li>
               <Link href="/about">
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
