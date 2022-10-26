@@ -5,7 +5,7 @@ const AllPosts = (props) => {
 
   return (
     <section className="px-4">
-      <ul>
+      <ul className="space-y-12">
         {posts
           .slice()
           .reverse()
