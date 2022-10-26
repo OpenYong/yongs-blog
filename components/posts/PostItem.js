@@ -48,7 +48,7 @@ const PostItem = ({ post }) => {
       </div>
       <div className="flex space-x-4">
         <time className="text-sm text-gray-500">{formattedDate}</time>
-        <div className="flex items-center space-x-1 text-gray-500">
+        <div className="flex items-center space-x-1 text-sm text-gray-500">
           <FiEye />
           <span>{views}</span>
         </div>

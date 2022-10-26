@@ -1,0 +1,95 @@
+---
+title: "전개 연산자(Spread Operator)"
+date: "2022-10-26"
+image: getting-started-with-nextjs.png
+excerpt: 자바스크립트에서 스프레드 연산자는 어떤 것인지 알아보자.
+tags: ["javascript"]
+---
+
+## 스프레드 연산자란?
+
+> 전개 구문을 사용하면 배열이나 문자열과 같이 반복 가능한 문자를 0개 이상의 인수 (함수로 호출할 경우) 또는 요소 (배열 리터럴의 경우)로 확장하여, 0개 이상의 키-값의 쌍으로 객체로 확장시킬 수 있습니다. -MDN
+
+쉽게 말해 스프레드 연산자는 배열안에 있는 요소들을 뿌려주는 역할을 하는 것입니다.
+
+### 배열의 결합
+
+```javascript
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1 = [...arr1, ...arr2];
+console.log(arr1); // [0, 1, 2, 3, 4, 5] 출력
+```
+
+arr1과 arr2의 요소들을 스프레드 연산자를 통해 배열에 담을 수 있습니다.
+
+concat 메소드를 사용하면 다음과 같습니다.
+
+```javascript
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+arr1 = arr1.concat(arr2);
+console.log(arr1); // [0, 1, 2, 3, 4, 5] 출력
+```
+
+### 배열의 복사
+
+스프레드 문법은 배열의 복사본을 만들때 유용합니다.
+
+코드를 통해 살펴보도록 하겠습니다.
+
+```javascript
+const arr = ["사과", "포도"];
+const newArr = arr;
+
+arr.push("오렌지");
+console.log(arr); // 출력: ['사과', '포도', '오렌지']
+console.log(newArr); // 출력: ['사과', '포도', '오렌지']
+```
+
+위에서 newArr는 arr를 복사본을 만들었다고 생각할 수 있겠지만, newArr는 arr를 참조하고 있습니다.
+
+```javascript
+const arr = ["사과", "포도"];
+const newArr = [...arr]; // 참조하지 않고 복사본을 만든다!
+
+arr.push("오렌지");
+console.log(arr); // 출력: ['사과', '포도', '오렌지']
+console.log(newArr); // 출력: ['사과', '포도']
+```
+
+스프레드 연산자를 사용하게 되면 이전 배열을 참조하진않고 이전 배열을 복사하게 됩니다. arr과 newArr은 완전히 다른 배열임을 알 수 있습니다.
+
+### 함수에서 활용하기
+
+스프레드 연산자 덕분에 함수에서 인수로 배열을 전달하기가 쉬워졌습니다.
+
+```javascript
+const myFunc = (x, y) => {
+  console.log(`${x} ${y}`);
+};
+
+const arr = ["오렌지", "주스"];
+
+myFunc.apply(null, arr); // (기존 방식)
+
+myFunc(...arr); //출력 : 오렌지 주스
+```
+
+기존에는 apply메소드를 사용해서 함수를 실행하고 인수를 차례대로 전달해야 했지만, 스프레드연산자의 도움을 통해서 함수호출이 쉬워졌습니다.
+
+## 나머지 매개변수 (Rest parameter)
+
+나머지 매개변수 문법은 스프레드 문법과 기능적으로 반대입니다. 레스트(rest)는 나머지를 뜻하며 여러 원소를 하나의 원소로 '압축'합니다.
+코드 예시를 통해 살펴보도록 하겠습니다.
+
+```javascript
+function myFun(a, b, ...manyMoreArgs) {
+  console.log("manyMoreArgs", manyMoreArgs);
+}
+
+myFun("one", "two", "three", "four", "five", "six");
+// 출력 : ['three', 'four', 'five', 'six']
+```
+
+처음 두 원소는 a,b에 담기고 **나머지**들은 z에 담기게 됩니다.

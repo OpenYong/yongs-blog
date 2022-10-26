@@ -4,7 +4,7 @@ import AboutMe from "../components/hompage/AboutMe";
 const About = () => {
   return (
     <>
-      <PageHeader>반갑습니다😀 Yong Lee 입니다.</PageHeader>
+      <PageHeader>반갑습니다! 😀 Yong Lee 입니다.</PageHeader>
       <AboutMe />
     </>
   );
