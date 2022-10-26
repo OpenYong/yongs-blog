@@ -12,6 +12,8 @@ module.exports = (phase, { defaultConfig }) => {
         mongodb_password: "4LGndmuLkvGybUlk",
         mongodb_clustername: "cluster0",
         mongodb_database: "YongsBlog-dev",
+        github_token:
+          "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",
       },
     };
   }
@@ -24,6 +26,8 @@ module.exports = (phase, { defaultConfig }) => {
       mongodb_password: "4LGndmuLkvGybUlk",
       mongodb_clustername: "cluster0",
       mongodb_database: "YongsBlog",
+      github_token:
+        "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",
     },
   };
 };

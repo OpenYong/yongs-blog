@@ -23,13 +23,6 @@ async function handler(req, res) {
   }
 
   if (req.method === "PUT") {
-    // const { visit, slug } = req.body;
-
-    // const postInfo = {
-    //   totalViews,
-    //   likes,
-    // };
-
     let mongoClient;
 
     try {
