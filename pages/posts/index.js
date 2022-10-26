@@ -34,4 +34,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default postsPage;
+export default PostsPage;
