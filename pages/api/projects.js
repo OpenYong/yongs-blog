@@ -13,25 +13,29 @@ async function handler(req, res) {
       throw new Error("오류 발생!");
     }
 
-    const data = await response.json();
+    const responseData = await response.json();
 
     const projectsList = [];
 
-    data.forEach((el) => {
-      projectsList.push({
-        name: el.name,
-        stars: el.stargazers_count,
-        url: el.html_url,
-        description: el.description,
-        language: el.language,
-        stargazers_url: el.stargazers_url,
-        homepage: el.homepage,
-        topics: el.topics,
+    responseData
+      .filter((data) => {
+        return data.topics.includes("blog");
+      })
+      .forEach((el) => {
+        projectsList.push({
+          name: el.name,
+          stars: el.stargazers_count,
+          url: el.html_url,
+          description: el.description,
+          language: el.language,
+          stargazers_url: el.stargazers_url,
+          homepage: el.homepage,
+          topics: el.topics,
+        });
       });
-    });
 
     res.status(200).json({
-      repos: projectsList,
+      projectRepos: projectsList,
     });
   }
 }
