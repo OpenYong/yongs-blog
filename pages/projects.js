@@ -11,7 +11,8 @@ const ProjectPage = () => {
 
   return (
     <>
-      <PageHeader>업데이트 예정🔧</PageHeader>
+      <PageHeader>프로젝트</PageHeader>
+      <p className="my-8 text-center">프로젝트 결과물, 공부📚</p>
       <AllProjects projects={projectsData.projectRepos} />
     </>
   );
