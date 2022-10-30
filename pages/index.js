@@ -1,7 +1,6 @@
 import Head from "next/head";
 
 import Hero from "../components/hompage/Hero";
-import AboutMe from "../components/hompage/AboutMe";
 import FeaturedPosts from "../components/posts/FeaturedPosts";
 
 import { getAllPosts } from "../utils/post";

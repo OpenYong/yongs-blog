@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       {/* <NavBar /> */}
       <main
         style={{ minHeight: "calc(100vh - 64px - 188px)" }}
-        className="mx-auto bg-white lg:max-w-3xl"
+        className="mx-auto bg-white md:max-w-2xl lg:max-w-3xl"
       >
         {children}
       </main>
