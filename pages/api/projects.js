@@ -21,6 +21,11 @@ async function handler(req, res) {
       .filter((data) => {
         return data.topics.includes("blog");
       })
+      .sort((projectA, projectB) => {
+        return new Date(projectA.pushed_at) > new Date(projectB.pushed_at)
+          ? 1
+          : -1;
+      })
       .forEach((el) => {
         projectsList.push({
           name: el.name,
