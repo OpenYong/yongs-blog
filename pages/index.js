@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 import Hero from "../components/hompage/Hero";
-import FeaturedPosts from "../components/posts/FeaturedPosts";
+import RecentPosts from "../components/posts/RecentPosts";
 
 import { getAllPosts } from "../utils/post";
 
@@ -16,7 +16,7 @@ const HomaPage = ({ posts }) => {
         />
       </Head>
       <Hero />
-      <FeaturedPosts posts={posts} />
+      <RecentPosts posts={posts} />
     </>
   );
 };
