@@ -1,0 +1,85 @@
+---
+title: "ES6에서의 객체 사용 살펴보기"
+date: "2022-11-02"
+image: test.png
+excerpt: "ES6에서 객체를 사용하는 방법에 대해서."
+tags: ["javascript"]
+---
+
+
+# 객체 생성하기
+만약 다음과 같이 변수가 선언되어 있다고 해보겠습니다.
+```
+const name = "김철수";
+const age = 20;
+const nationality = "대한민국";
+```
+이 변수들로 객체를 생성한다고 했을때 다음과 같이 person 객체를 생성할 수 있습니다.
+```
+const person = {
+	name: name,
+	age: age,
+	nationality: nationality,
+}
+```
+ES6에서는 간결하게 객체를 생성할 수 있습니다.
+```
+const person = {
+	name,
+	age,
+	nationality,
+}
+```
+객체 속성을 변수명과 동일하게 하고자할때는 생략할 수 있습니다.
+
+# 객체에 함수 추가하기
+ES5에서는 객체에 함수를 추가하기 위해서 다음과 같이 선언해야했습니다.
+```
+const person = { 
+	name: "철수",
+	move: function() {
+		console.log(`${this.name}는 움직인다.`);
+	},
+};
+person.move();
+// 출력 : 철수는 움직인다.
+```
+객체에 함수를 추가하기 위해서는 function 키워드가 필요했습니다.
+
+```
+const person = { 
+	name: "철수",
+	move() {
+		console.log(`${this.name}는 움직인다.`);
+	},
+};
+person.move(); // 출력 : 철수는 움직인다.
+```
+function 키워드를 빼고 위와 같이 작성할 수 있게 됐습니다. 그리고 화살표함수까지 사용할 수 있게 되었습니다.
+```
+const person = { 
+	name: "철수",
+	greet: ()=> {
+		console.log('안녕하세요');
+	},
+};
+person.greet(); // 출력 : 안녕하세요
+```
+# 객체 속성을 동적으로 정의
+ES5에서 객체 속성을 동적으로 정의해주기 위해서는 다음과 같이 코드를 작성했습니다.
+```
+const state = "mystate";
+const america = {};
+america[state] = "California"
+console.log(america.mystate);
+// 출력 : California
+```
+ES6 이전에는 객체를 동적으로 정의하기 위해서 객체를 생성한 다음 수정해야 했습니다. 그러나 ES6에서는 객체를 생성하고 업데이트하는 것을 동시에 할 수 있습니다.
+
+```
+const state = "mystate";
+const america = {
+[state]: "California",
+};
+console.log(america.mystate);
+```
