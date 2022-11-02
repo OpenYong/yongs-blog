@@ -7,7 +7,7 @@ tags: ["javascript"]
 ---
 
 
-# 객체 생성하기
+## 객체 생성하기
 만약 다음과 같이 변수가 선언되어 있다고 해보겠습니다.
 ```
 const name = "김철수";
@@ -32,7 +32,7 @@ const person = {
 ```
 객체 속성을 변수명과 동일하게 하고자할때는 생략할 수 있습니다.
 
-# 객체에 함수 추가하기
+## 객체에 함수 추가하기
 ES5에서는 객체에 함수를 추가하기 위해서 다음과 같이 선언해야했습니다.
 ```
 const person = { 
@@ -65,7 +65,7 @@ const person = {
 };
 person.greet(); // 출력 : 안녕하세요
 ```
-# 객체 속성을 동적으로 정의
+## 객체 속성을 동적으로 정의
 ES5에서 객체 속성을 동적으로 정의해주기 위해서는 다음과 같이 코드를 작성했습니다.
 ```
 const state = "mystate";
@@ -79,7 +79,7 @@ ES6 이전에는 객체를 동적으로 정의하기 위해서 객체를 생성�
 ```
 const state = "mystate";
 const america = {
-[state]: "California",
+	[state]: "California",
 };
 console.log(america.mystate);
 ```
