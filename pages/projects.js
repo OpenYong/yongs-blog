@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import useSWR from "swr";
 import PageHeader from "../components/ui/PageHeader";
 import AllProjects from "../components/projects/AllProjects";
@@ -16,11 +15,17 @@ const ProjectPage = () => {
       </div>
     );
 
+  let isLoading = true;
+  if (projectsData) {
+    isLoading = false;
+  }
+
   return (
     <>
       <PageHeader>프로젝트</PageHeader>
       <p className="my-8 text-center">프로젝트 결과물, 공부📚</p>
-      <AllProjects projects={projectsData.projectRepos} />
+      {isLoading && "로딩..."}
+      {!isLoading && <AllProjects projects={projectsData.projectRepos} />}
     </>
   );
 };

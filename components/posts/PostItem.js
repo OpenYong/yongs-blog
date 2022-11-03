@@ -1,3 +1,4 @@
+import useSWR from "swr";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -7,19 +8,12 @@ const PostItem = ({ post }) => {
   const { metadata, slug } = post;
   const { title, image, excerpt, date, tags } = metadata;
 
-  const [views, setViews] = useState(0);
+  const { data: responseData, error } = useSWR(`/api/posts/${slug}`);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const responseData = await fetch(`/api/posts/${slug}`)
-        .then((res) => res.json())
-        .then((data) => data.postInfo);
-      const { totalViews } = responseData;
-      setViews(totalViews);
-    };
-
-    fetchData();
-  }, []);
+  let isLoading = true;
+  if (responseData) {
+    isLoading = false;
+  }
 
   const formattedDate = new Date(date).toLocaleDateString("ko-KR", {
     day: "numeric",
@@ -50,7 +44,7 @@ const PostItem = ({ post }) => {
         <time className="text-sm text-gray-500">{formattedDate}</time>
         <div className="flex items-center space-x-1 text-sm text-gray-500">
           <FiEye />
-          <span>{views}</span>
+          <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
         </div>
       </div>
     </li>
