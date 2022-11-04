@@ -1,5 +1,5 @@
 import { MDXRemote } from "next-mdx-remote";
-import { FiEye } from "react-icons/fi";
+import { FiEye, FiHeart } from "react-icons/fi";
 
 import useSWR from "swr";
 
@@ -7,6 +7,7 @@ const PostContent = (props) => {
   const { post, source, slug } = props;
 
   const { data: responseData, error } = useSWR(`/api/posts/${slug}`);
+  console.log(responseData);
 
   let isLoading = true;
   if (responseData) {
@@ -21,10 +22,15 @@ const PostContent = (props) => {
       <article className="prose mx-auto bg-white px-4 lg:prose-lg ">
         <div className="flex justify-between">
           <time className="italic text-gray-500">{post.date}</time>
-          <div className="flex items-center space-x-1 text-sm text-gray-500">
-            <FiEye />
-            <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
-            <div></div>
+          <div className="flex items-center space-x-4 text-sm text-gray-500">
+            <div className="flex items-center justify-center space-x-2">
+              <FiEye />
+              <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2">
+              <FiHeart />
+              <span>{!isLoading ? responseData.postInfo.likes : "-"}</span>
+            </div>
           </div>
         </div>
         <div className="">
