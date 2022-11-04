@@ -1,6 +1,5 @@
 import useSWR from "swr";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 import { FiEye } from "react-icons/fi";
 

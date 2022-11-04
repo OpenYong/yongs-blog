@@ -23,7 +23,7 @@ const PostDetailPage = ({ metadata, mdxSource, slug }) => {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.excerpt} />
       </Head>
-      <PostContent post={metadata} source={mdxSource} />
+      <PostContent post={metadata} source={mdxSource} slug={slug}/>
     </>
   );
 };
