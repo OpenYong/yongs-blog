@@ -1,18 +1,39 @@
 import { MDXRemote } from "next-mdx-remote";
 import { FiEye, FiHeart } from "react-icons/fi";
 
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 
 const PostContent = (props) => {
   const { post, source, slug } = props;
 
+  const { mutate } = useSWRConfig();
+
   const { data: responseData, error } = useSWR(`/api/posts/${slug}`);
-  console.log(responseData);
 
   let isLoading = true;
   if (responseData) {
     isLoading = false;
   }
+
+  const likeBtnHandler = () => {
+    mutate(
+      `/api/posts/${slug}`,
+      async () => {
+        const result = await fetch(`/api/posts/likes/${slug}`, {
+          method: "PUT",
+        });
+        const resultData = await result.json();
+        const newLikes = resultData.postInfo.likes + 1;
+        return {
+          postInfo: {
+            ...responseData.postInfo,
+            likes: newLikes,
+          },
+        };
+      },
+      { revalidate: false }
+    );
+  };
 
   return (
     <div className="">
@@ -27,7 +48,10 @@ const PostContent = (props) => {
               <FiEye />
               <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
             </div>
-            <button className="flex items-center justify-center space-x-2 rounded-xl py-1 px-3 duration-300 hover:scale-110 hover:bg-rose-100/70 hover:text-rose-500">
+            <button
+              onClick={likeBtnHandler}
+              className="flex items-center justify-center space-x-2 rounded-xl py-1 px-3 duration-300 hover:scale-110 hover:bg-rose-100/70 hover:text-rose-500"
+            >
               <FiHeart className="animate-bounce" />
               <span>{!isLoading ? responseData.postInfo.likes : "-"}</span>
             </button>
