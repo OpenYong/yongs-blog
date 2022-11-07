@@ -27,10 +27,10 @@ const PostContent = (props) => {
               <FiEye />
               <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
             </div>
-            <div className="flex items-center justify-center space-x-2">
-              <FiHeart />
+            <button className="flex items-center justify-center space-x-2 rounded-xl py-1 px-3 duration-300 hover:scale-110 hover:bg-rose-100/70 hover:text-rose-500">
+              <FiHeart className="animate-bounce" />
               <span>{!isLoading ? responseData.postInfo.likes : "-"}</span>
-            </div>
+            </button>
           </div>
         </div>
         <div className="">
