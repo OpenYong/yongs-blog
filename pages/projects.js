@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import PageHeader from "../components/ui/PageHeader";
 import AllProjects from "../components/projects/AllProjects";
+import ProjectItemSkeleton from "../components/ui/ProjectItemSkeleton";
 
 const ProjectPage = () => {
   const { data: projectsData, error } = useSWR("/api/projects");
@@ -14,7 +15,7 @@ const ProjectPage = () => {
     <>
       <PageHeader>프로젝트</PageHeader>
       <p className="my-8 text-center">프로젝트 결과물, 공부📚</p>
-      {isLoading && "로딩..."}
+      {isLoading && <ProjectItemSkeleton />}
       {!isLoading && <AllProjects projects={projectsData.projectRepos} />}
     </>
   );
