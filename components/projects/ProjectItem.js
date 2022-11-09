@@ -4,7 +4,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 const ProjectItem = ({ project }) => {
   const { name, description, language, url, homepage } = project;
   return (
-    <div className="group visible flex h-64 flex-col justify-between rounded-md border-0 bg-neutral-400/5 p-4 shadow-lg shadow-neutral-200/50 transition duration-300 hover:scale-105">
+    <div className="group visible flex h-64 flex-col justify-between rounded-md border-0 bg-neutral-400/5 p-4 shadow-lg shadow-neutral-200/50 transition duration-300 hover:scale-105 hover:shadow-xl">
       <div>
         <h1 className="text-xl font-medium">{name}</h1>
         <p className="pt-4 pb-4 text-gray-500">{description}</p>
