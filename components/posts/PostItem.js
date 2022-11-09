@@ -33,8 +33,8 @@ const PostItem = ({ post }) => {
       <div className="mb-4 flex space-x-3">
         {tags.map((tag) => {
           return (
-            <div key={tag} className="rounded bg-slate-100 py-1 px-2">
-              <p className="text-sm text-sky-500">#{tag}</p>
+            <div key={tag} className="py-1 pr-2">
+              <p className="text-sm text-gray-500">#{tag}</p>
             </div>
           );
         })}

@@ -51,7 +51,7 @@ const PostContent = (props) => {
       </h1>
       <article className="prose mx-auto bg-white px-4 lg:prose-lg ">
         <div className="flex justify-between">
-          <time className="italic text-gray-500">{post.date}</time>
+          <time className="text-sm text-gray-500">{post.date}</time>
           <div className="flex items-center space-x-4 text-sm text-gray-500">
             <div className="flex items-center justify-center space-x-2">
               <FiEye />

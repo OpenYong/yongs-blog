@@ -28,9 +28,9 @@ const Header = () => {
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/"
-                      ? "font-bold text-sky-500"
+                      ? "font-bold text-gray-700"
                       : "font-normal"
-                  } duration-300 hover:bg-slate-100`}
+                  } duration-300 hover:text-blue-500`}
                 >
                   홈
                 </a>
@@ -41,9 +41,9 @@ const Header = () => {
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/posts"
-                      ? "font-bold text-sky-500"
+                      ? "font-bold text-gray-700"
                       : "font-normal"
-                  } duration-300 hover:bg-slate-100`}
+                  } duration-300 hover:text-blue-500`}
                 >
                   블로그
                 </a>
@@ -54,9 +54,9 @@ const Header = () => {
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/projects"
-                      ? "font-bold text-sky-500"
+                      ? "font-bold text-gray-700"
                       : "font-normal"
-                  } duration-300 hover:bg-slate-100`}
+                  } duration-300 hover:text-blue-500`}
                 >
                   프로젝트
                 </a>
@@ -67,9 +67,9 @@ const Header = () => {
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/about"
-                      ? "font-bold text-sky-500"
+                      ? "font-bold text-gray-700"
                       : "font-normal"
-                  } duration-300 hover:bg-slate-100`}
+                  } duration-300 hover:text-blue-500`}
                 >
                   소개
                 </a>
@@ -80,9 +80,9 @@ const Header = () => {
                 <a
                   className={`duration-0 rounded-md p-2 text-base transition ease-in-out ${
                     router.pathname === "/contact"
-                      ? "font-bold text-sky-500"
+                      ? "font-bold text-gray-700"
                       : "font-normal"
-                  } duration-300 hover:bg-slate-100`}
+                  } duration-300 hover:text-blue-500`}
                 >
                   연락하기
                 </a>
