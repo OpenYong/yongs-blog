@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { FiEye } from "react-icons/fi";
 
+import { getLanguageColor } from "../../utils/colors";
+
 const PostItem = ({ post }) => {
   const { metadata, slug } = post;
   const { title, image, excerpt, date, tags } = metadata;
@@ -34,14 +36,17 @@ const PostItem = ({ post }) => {
         {tags.map((tag) => {
           return (
             <div key={tag} className="py-1 pr-2">
-              <p className="text-sm text-gray-500">#{tag}</p>
+              <p className="text-sm text-gray-500">
+                <span style={{ color: getLanguageColor(tag) }}>#</span>
+                {tag}
+              </p>
             </div>
           );
         })}
       </div>
       <div className="flex space-x-4">
-        <time className="text-sm text-gray-500">{formattedDate}</time>
-        <div className="flex items-center space-x-1 text-sm text-gray-500">
+        <time className="text-sm text-gray-400">{formattedDate}</time>
+        <div className="flex items-center space-x-1 text-sm text-gray-400">
           <FiEye />
           <span>{!isLoading ? responseData.postInfo.totalViews : "-"}</span>
         </div>
